@@ -4,7 +4,7 @@ import React from 'react'
 const DetailsScreen = () => {
   return (
     <SafeAreaView style={styles.TopView}>
-      <Text>HomeScreen</Text>
+      <Text>DetailsScreen</Text>
     </SafeAreaView>
   )
 }
