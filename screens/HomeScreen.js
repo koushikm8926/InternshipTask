@@ -2,11 +2,11 @@ import { Platform, StyleSheet, Text, View,  TextInput, ScrollView } from 'react-
 import React from 'react'
 import { Feather } from "@expo/vector-icons";
 import Carousel from '../components/Carousel';
+import FoodTypes from '../components/FoodTypes';
 
 const HomeScreen = () => {
   return (
-    <ScrollView style={styles.ScrollView} showsVerticalScrollIndicator={false}>
-      
+    <ScrollView style={styles.ScrollView} showsVerticalScrollIndicator={false}> 
       <View style={styles.TopView}>
         <TextInput
           placeholder="Search for Restaurent item or more"
@@ -14,8 +14,8 @@ const HomeScreen = () => {
         />
         <Feather name="search" size={24} color="#E52B50" />
       </View>
-
       <Carousel/>
+      <FoodTypes/>
 
     </ScrollView>
   )
