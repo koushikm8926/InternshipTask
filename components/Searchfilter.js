@@ -1,23 +1,24 @@
-import { StyleSheet, Text, View } from 'react-native'
+import { StyleSheet, Text, View, Image } from 'react-native'
 import React from 'react'
 import { FlatList } from 'react-native'
 
 const Searchfilter = ({data,input, setInput }) => {
-  return (
+ //console.log(data);
+    return (
     <View style={{marginTop:20, }}>
       
       <FlatList data={data} renderItem={({item})=>{
         if(input===""){
             return(
-                <View>
-                </View>
+                <View/> 
             )
         }
 
         if(item.name.toLowerCase().includes(input.toLowerCase())){
             return(
-                <View style={{marginVertical:12, }}>
-                <Text style={{fontSize:14,fontWeight:'bold'}}>{item.name}</Text>
+                <View>
+                <Text style={{fontSize:14}}>{item.name}</Text>
+                <Image source={{uri:item.image}} style={{height:60, width:90,}}/>
                 </View>
             )
         }
