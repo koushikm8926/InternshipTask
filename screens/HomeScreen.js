@@ -17,22 +17,26 @@ const HomeScreen = () => {
     {
       id:0,
       name:"Jeera Rice",
+      description:'abc',
       image:"https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_208,h_208,c_fit/xukq8swrwct8usmg4cjv",
   },
   {
       id:1,
       name:"Veg Fried Rice",
+      description:'abc',
       image:"https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_208,h_208,c_fit/pycpbzawueci1dvhmkr3",
 
   },
   {
       id:2,
       name:"Egg Fried Rice",
+      description:'abc',
       image:"https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_208,h_208,c_fit/lv6jl9qdscekjmwkxm9l",
   },
   {
       id:3,
       name:"Chicken Fried Rice",
+      description:'abc',
       image:"https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_208,h_208,c_fit/akmx533z73jjbq8avy6v",
   }
   ]

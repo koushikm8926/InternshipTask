@@ -1,9 +1,9 @@
-import { StyleSheet, Text, View, Image } from 'react-native'
+import { StyleSheet, Text, View, Image ,} from 'react-native'
 import React from 'react'
 import { FlatList } from 'react-native'
 
 const Searchfilter = ({data,input, setInput }) => {
- //console.log(data);
+ console.log(data);
     return (
     <View style={{marginTop:20, }}>
       
@@ -16,9 +16,13 @@ const Searchfilter = ({data,input, setInput }) => {
 
         if(item.name.toLowerCase().includes(input.toLowerCase())){
             return(
-                <View>
-                <Text style={{fontSize:14}}>{item.name}</Text>
-                <Image source={{uri:item.image}} style={{height:60, width:90,}}/>
+                <View style={{ flexDirection: "row",margin:10,   justifyContent: "space-between", }}>
+                  <View>
+                    <Text style={{fontSize:14,fontWeight: "600",}}>{item.name}</Text>
+                    <Text>{item.description}</Text>
+                  </View>
+                  
+                  <Image source={{uri:item.image}} style={{height:100, width:150, borderRadius: 7,}}/>
                 </View>
             )
         }
