@@ -1,17 +1,22 @@
 import { Platform, StyleSheet, Text, View,  TextInput, ScrollView } from 'react-native'
 import React from 'react'
 import { Feather } from "@expo/vector-icons";
+import Carousel from '../components/Carousel';
 
 const HomeScreen = () => {
   return (
     <ScrollView style={styles.ScrollView} showsVerticalScrollIndicator={false}>
+      
       <View style={styles.TopView}>
         <TextInput
           placeholder="Search for Restaurent item or more"
           style={{ fontSize: 17, width: "90%" }}
         />
-         <Feather name="search" size={24} color="#E52B50" />
+        <Feather name="search" size={24} color="#E52B50" />
       </View>
+
+      <Carousel/>
+
     </ScrollView>
   )
 }
