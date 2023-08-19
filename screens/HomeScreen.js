@@ -4,11 +4,13 @@ import { Feather } from "@expo/vector-icons";
 import Carousel from '../components/Carousel';
 import FoodTypes from '../components/FoodTypes';
 import QuickFood from '../components/QuickFood';
-import { Ionicons } from '@expo/vector-icons';
+
+import FilterSection from '../components/FilterSection';
 
 const HomeScreen = () => {
   return (
     <ScrollView style={styles.ScrollView} showsVerticalScrollIndicator={false}> 
+      
       <View style={styles.TopView}>
         <TextInput
           placeholder="Search for Restaurent item or more"
@@ -16,28 +18,11 @@ const HomeScreen = () => {
         />
         <Feather name="search" size={24} color="#E52B50" />
       </View>
+
       <Carousel/>
       <FoodTypes/>
       <QuickFood/>
-
-      
-      <View style={{flexDirection:'row', alignItems:'center', justifyContent:'space-around'}}>
-      <Pressable style={styles.Pressable}>
-        <Text style={{marginRight:6}}>Filter</Text>
-        <Ionicons name="filter" size={20} color="black" />
-      </Pressable>
-
-      <Pressable style={styles.Pressable}>
-        <Text>Sort By Value</Text>
-      </Pressable>
-
-      <Pressable style={styles.Pressable}>
-        <Text>Sort By Price</Text>
-      </Pressable>
-      </View>
-
-
-
+      <FilterSection/>
     </ScrollView>
   )
 }
@@ -58,15 +43,5 @@ const styles = StyleSheet.create({
           margin: 10,
           borderRadius: 7,  
   }, 
-  Pressable:{
-    marginHorizontal:10, 
-    flexDirection:'row', 
-    alignItems:'center', 
-    borderWidth:1, 
-    borderColor:'#d0d0d0', 
-    padding:10, 
-    borderRadius:20, 
-    justifyContent:'center', 
-    width:120
-  }
+ 
 })
