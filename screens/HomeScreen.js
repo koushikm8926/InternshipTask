@@ -9,6 +9,9 @@ import FilterSection from '../components/FilterSection';
 import Searchfilter from '../components/Searchfilter';
 import SearchFoodItems from '../data/SearchFoodItems';
 
+import HotelsFoodList from '../data/HotelsFoodList';
+import MenuItem from '../components/MenuItem';
+
 const HomeScreen = () => {
   const [input, setInput]= useState("");
   console.log(input);
@@ -17,30 +20,31 @@ const HomeScreen = () => {
     {
       id:0,
       name:"Jeera Rice",
-      description:'abc',
+      description:'Jeera Bhaat or Jeera Rice is an Indian dish consisting of rice and cumin seeds.',
       image:"https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_208,h_208,c_fit/xukq8swrwct8usmg4cjv",
   },
   {
       id:1,
       name:"Veg Fried Rice",
-      description:'abc',
+      description:'Veg fried rice is a popular Asian recipe made with cooked rice stir-fried with various vegetables and seasoned with soy sauce',
       image:"https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_208,h_208,c_fit/pycpbzawueci1dvhmkr3",
 
   },
   {
       id:2,
       name:"Egg Fried Rice",
-      description:'abc',
+      description:'This easy egg fried rice is a no-fuss weeknight meal that is better than takeout! ',
       image:"https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_208,h_208,c_fit/lv6jl9qdscekjmwkxm9l",
   },
   {
       id:3,
       name:"Chicken Fried Rice",
-      description:'abc',
+      description:'Chicken fried rice is a take-out classic and an easy weeknight meal! ',
       image:"https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_208,h_208,c_fit/akmx533z73jjbq8avy6v",
   }
   ]
 
+  const data= HotelsFoodList;
   return (
     <ScrollView style={styles.ScrollView} showsVerticalScrollIndicator={false}>     
       <View style={styles.TopView}>
@@ -56,6 +60,13 @@ const HomeScreen = () => {
       <FoodTypes/>
       <QuickFood/>
       <FilterSection/>
+
+      
+      {data.map((item, index)=>(
+        <MenuItem key={index} item={item}/>
+      ))}
+
+
     </ScrollView>
   )
 }

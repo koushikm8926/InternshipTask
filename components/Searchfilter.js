@@ -17,7 +17,7 @@ const Searchfilter = ({data,input, setInput }) => {
         if(item.name.toLowerCase().includes(input.toLowerCase())){
             return(
                 <View style={{ flexDirection: "row",margin:10,   justifyContent: "space-between", }}>
-                  <View>
+                  <View style={{width:150,}}>
                     <Text style={{fontSize:14,fontWeight: "600",}}>{item.name}</Text>
                     <Text>{item.description}</Text>
                   </View>
