@@ -13,7 +13,7 @@ import { useNavigation, useRoute } from "@react-navigation/native";
 import { Ionicons } from "@expo/vector-icons";
 import { AntDesign } from "@expo/vector-icons";
 import { MaterialIcons } from "@expo/vector-icons";
-
+import { MaterialCommunityIcons } from "@expo/vector-icons";
 
 const DetailsScreen = ({ route }) => {
   const navigation= useNavigation();
@@ -71,7 +71,7 @@ const DetailsScreen = ({ route }) => {
               }}
             >
               <Text style={{ fontSize: 19, fontWeight: "bold" }}>
-                {/* {route.params.name} */}
+                Arsalan Restarunt
               </Text>
               <View style={{ flexDirection: "row", alignItems: "center" }}>
                 <AntDesign
@@ -93,16 +93,16 @@ const DetailsScreen = ({ route }) => {
             >
               <MaterialIcons name="stars" size={24} color="green" />
               <Text style={{ marginLeft: 3, fontSize: 17, fontWeight: 400 }}>
-                {/* {route.params.rating} */}
+             4.4 || 30-40 
               </Text>
               <Text style={{ marginLeft: 3 }}>.</Text>
               <Text style={{ marginLeft: 3, fontSize: 17, fontWeight: 400 }}>
-                {/* {route.params.time} mins */}
+              Minute
               </Text>
             </View>
 
             <Text style={{ fontSize: 17, marginTop: 7, color: "grey" }}>
-              {/* {route.params.cuisines} */}
+            North Indian || South Indian
             </Text>
 
             <View
@@ -116,7 +116,7 @@ const DetailsScreen = ({ route }) => {
               <Text
                 style={{ marginLeft: 15, fontSize: 14, fontWeight: "bold" }}
               >
-                {/* {route.params.adress} */}
+               Kolkata,SaltLake Sector || .
               </Text>
             </View>
 
@@ -195,9 +195,31 @@ const DetailsScreen = ({ route }) => {
                               <MaterialIcons name="stars" size={24} color="green" />
                             </View>
                 </View>
+              
                         <Text>{item.description}</Text>
-                       
-                        <Text>{item.ratings}</Text>
+                <View style={{flexDirection:'row',marginTop:5,}}>
+                        <MaterialCommunityIcons name="bike-fast" size={24} color="black" />
+                        <Text style={{ marginLeft: 6, fontSize: 16,  fontWeight:'400' }}>FREE DELIVERY</Text>
+                        <Text style={{fontSize: 16}}>|| {item.time} Minute</Text>
+                </View>
+
+             <View style={{flexDirection:'row',marginTop:5,}} >
+                <View style={{
+                                  alignItems: "center",
+                                  justifyContent: "center",
+                                  borderRadius: 11,
+                                  height: 22,
+                                  width: 22,
+                                  backgroundColor: "#FFB6C1",
+                                }}>
+                  <Text style={{  fontWeight: "bold",color: "white",fontSize: 13,}}>$</Text>
+                </View>
+                <View style={{marginLeft:10,}}>
+                   <Text style={{fontSize: 16, fontWeight:'bold'}}>{item.price} Rupees</Text>
+                </View>
+               
+              </View>   
+           
             
             </View>
             <View>
@@ -236,56 +258,3 @@ export default DetailsScreen
 
  
  
-//   return (
-//     <>
-     
-//       <Pressable
-//       onPress={toggleModal}
-//         style={{
-//           height: 60,
-//           width: 60,
-//           justifyContent: "center",
-//           borderRadius: 40,
-//           backgroundColor: "black",
-//           alignItems: "center",
-//           marginLeft: "auto",
-//           position: "absolute",
-//           bottom: 35,
-//           right: 25,
-//           alignContent: "center",
-//         }}
-//       >
-//         <MaterialIcons
-//           style={{ alignItems: "center" }}
-//           name="menu-book"
-//           size={23}
-//           color="white"
-//         />
-//         <Text
-//           style={{ textAlign: "center", color: "white", fontWeight: "500" }}
-//         >
-//           MENU
-//         </Text>
-//       </Pressable>
-
-//         <Modal isVisible={modalVisible} onBackButtonPress={toggleModal}>
-//         <View style={{height:190, width:250, backgroundColor:'black', position:'absolute', borderRadius:7, right:10, bottom:35,}}>
-//         {menu.map((item,i)=>(
-//           <View key={i} style={{flexDirection:'row', padding:10, alignItems:'center',  justifyContent:'space-between', }}>
-//               <Text style={{color:'#ff8702', fontWeight:'600', fontSize:17,}}>{item.name}</Text>
-//               <Text style={{color:'#ff8702', fontWeight:'600', fontSize:17,}}>{item.items.length}</Text>
-//           </View>
-//         ))}
-//         <View style={{justifyContent:'center', alignItems:'center', }}>
-//           <Image style={{width:120, height:70, resizeMode:'contain'}} source={{uri:"https://1000logos.net/wp-content/uploads/2021/05/Swiggy-logo-768x432.png"}}/>
-//         </View>
-//         </View>
-//         </Modal>
-
-
-
-//     </>
-//   );
-// };
-
-

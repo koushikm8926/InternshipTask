@@ -1,11 +1,11 @@
-import { StyleSheet, Text, View, ScrollView, Image, Pressable } from 'react-native'
+import { StyleSheet, Text, View, ScrollView, Image, Pressable, TouchableOpacity } from 'react-native'
 import React from 'react'
 import { useNavigation } from '@react-navigation/native';
 
 
 const PopularFood = () => {
     const navigation= useNavigation();
-    const navigateToScreenB = () => {
+    const navigateToDetailScreen = () => {
         navigation.navigate('Details', { food });
       };
     const food=[
@@ -15,6 +15,7 @@ const PopularFood = () => {
             rating:4.1,
             ratings:43,
             price:275,
+            time:"30-40",
             description:'Jeera Bhaat or Jeera Rice is an Indian dish consisting of rice and cumin seeds.',
             image:"https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_208,h_208,c_fit/xukq8swrwct8usmg4cjv",
            
@@ -24,6 +25,7 @@ const PopularFood = () => {
             name:"Chilly Chicken (Boneless)",
             rating:4.1,
             ratings:43,
+            time:"30-40",
             price:275,
             description:'Crispy and flavorful is how I would describe this Chilli Chicken. Boneless chicken is marinated in flavorful sauces, fried until crispy,',
             image:"https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_208,h_208,c_fit/ry3c3f518z10t4olu4l7",
@@ -33,6 +35,7 @@ const PopularFood = () => {
             name:"Veg Fried Rice",
             rating:4.1,
             ratings:43,
+            time:"30-40",
             price:275,
             description:'Veg fried rice is a popular Asian recipe made with cooked rice stir-fried with various vegetables and seasoned with soy sauce',
             image:"https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_208,h_208,c_fit/pycpbzawueci1dvhmkr3",
@@ -43,6 +46,7 @@ const PopularFood = () => {
             name:"Spl Veg Biryani",
             rating:4.1,
             ratings:43,
+            time:"30-40",
             price:275,
             description:'Vegetable Biryani is an aromatic rice dish made with basmati rice, mix veggies, herbs & biryani spices',
             image:"https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_208,h_208,c_fit/fsitbray4gq1kxcndqqx",
@@ -53,6 +57,7 @@ const PopularFood = () => {
             rating:4.1,
             ratings:43,
             price:275,
+            time:"30-40",
             description:'Egg fried rice recipe made in restaurant style, simple, quick and easy. The smoky aroma of the egg fried rice is great & delicious!!',
             description:'This easy egg fried rice is a no-fuss weeknight meal that is better than takeout! ',
             image:"https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_208,h_208,c_fit/lv6jl9qdscekjmwkxm9l",
@@ -62,6 +67,7 @@ const PopularFood = () => {
             name:"Paneer 65",
             rating:4.1,
             ratings:43,
+            time:"30-40",
             price:275,
             description:'Paneer 65 is a spicy South Indian appetizer made with Paneer aka Indian cheese, flour, spices and herbs like curry leaves.',
             image:"https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_208,h_208,c_fit/druwjzmfmz7qvepq3bkr",
@@ -71,6 +77,7 @@ const PopularFood = () => {
             name:"Chicken Fried Rice",
             rating:4.1,
             ratings:43,
+            time:"30-40",
             price:275,
             description:'Chicken fried rice is a take-out classic and an easy weeknight meal! ',
             image:"https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_208,h_208,c_fit/akmx533z73jjbq8avy6v",
@@ -79,6 +86,7 @@ const PopularFood = () => {
             id:"104",
             name:"Chilly Paneer",
             rating:4.1,
+            time:"30-40",
             ratings:43,
             price:275,
             description:'Chilli Paneer is an Indo-Chinese appetizer where crisp batter fried paneer is tossed in slightly sweet, spicy, hot and tangy chilli sauce.',
@@ -89,7 +97,7 @@ const PopularFood = () => {
     <View>
       <Text style={styles.text}>Popular Food</Text>
       <ScrollView >
-        <Pressable onPress={navigateToScreenB}>
+        <Pressable onPress={navigateToDetailScreen}>
         {food.map((item, index) => (  
          <View style={{ margin: 10, flexDirection:'row', }} key={index}>
             <Image source={{ uri: item.image }} style={{ height: 150,   borderRadius: 7,  width:120, }}/>
@@ -99,6 +107,12 @@ const PopularFood = () => {
                     </View>
                     <View style={{marginTop:30,marginLeft:10,width:250,}}>
                         <Text>{item.description}</Text>
+                    </View>
+                    
+                    <View style={{marginLeft:10,  }}>
+                    <TouchableOpacity  onPress={navigateToDetailScreen}  style={{backgroundColor:'#FC8019', width:120,borderRadius:7,marginTop:5,height:50,alignItems:'center',   justifyContent:'center',}}>
+                        <Text style={{color:'white', fontWeight:'bold'}}>Click to See More</Text>
+                        </TouchableOpacity>
                     </View>
             </View>
           </View>   
