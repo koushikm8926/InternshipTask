@@ -13,6 +13,7 @@ import HotelsFoodList from '../data/HotelsFoodList';
 import MenuItem from '../components/MenuItem';
 import PopularFood from '../components/PopularFood';
 import SecondCarousel from '../components/SecondCarousel';
+import SecondQuickFood from '../components/SecondQuickFood';
 const HomeScreen = () => {
   const [input, setInput]= useState("");
   console.log(input);
@@ -91,10 +92,10 @@ const HomeScreen = () => {
         <MenuItem key={index} item={item}/>
       ))}
 
-  <SecondCarousel/>
-
+      <SecondCarousel/>
+      <SecondQuickFood/>
+      <FilterSection/>
       <PopularFood/>
-
     </ScrollView>
   )
 }

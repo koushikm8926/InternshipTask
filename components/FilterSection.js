@@ -4,7 +4,7 @@ import { Ionicons } from '@expo/vector-icons';
 
 const FilterSection = () => {
   return (
-    <View>
+    <View style={{marginTop:10,}}>
       <View style={{flexDirection:'row', alignItems:'center', justifyContent:'space-around'}}>
         <Pressable style={styles.Pressable}>
           <Text style={{marginRight:6}}>Filter</Text>
