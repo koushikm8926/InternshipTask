@@ -12,7 +12,7 @@ import SearchFoodItems from '../data/SearchFoodItems';
 import HotelsFoodList from '../data/HotelsFoodList';
 import MenuItem from '../components/MenuItem';
 import PopularFood from '../components/PopularFood';
-
+import SecondCarousel from '../components/SecondCarousel';
 const HomeScreen = () => {
   const [input, setInput]= useState("");
   console.log(input);
@@ -90,6 +90,8 @@ const HomeScreen = () => {
       {data.map((item, index)=>(
         <MenuItem key={index} item={item}/>
       ))}
+
+  <SecondCarousel/>
 
       <PopularFood/>
 
