@@ -1,21 +1,17 @@
 import { Platform, StyleSheet,ScrollView, View, TextInput} from 'react-native'
 import React, {useState} from 'react'
 import { Feather } from "@expo/vector-icons";
-
 import Carousel from '../components/Carousel';
 import FoodTypes from '../components/FoodTypes';
 import QuickFood from '../components/QuickFood';
 import FilterSection from '../components/FilterSection';
 import Searchfilter from '../components/Searchfilter';
-import SearchFoodItems from '../data/SearchFoodItems';
-
 import HotelsFoodList from '../data/HotelsFoodList';
-import MenuItem from '../components/MenuItem';
 import PopularFood from '../components/PopularFood';
 import SecondCarousel from '../components/SecondCarousel';
 import SecondQuickFood from '../components/SecondQuickFood';
 
-import DetailsScreensData from '../data/DetailsScreensData';
+
 
 const HomeScreen = () => {
   const [input, setInput]= useState("");
@@ -85,23 +81,15 @@ const HomeScreen = () => {
         />
         <Feather name="search" size={24} color="#E52B50" />
       </View>
-      <Searchfilter input={input} setInput={setInput} data={fooditem} />  
-      <Carousel/>
-      <FoodTypes/>
-      <QuickFood/>
-      <FilterSection/>
-
-      
-      {data.map((item, index)=>(
-        <MenuItem key={index} item={item}/>
-      ))}
-
-      <SecondCarousel/>
-      <SecondQuickFood/>
-      <FilterSection/>
-
-      <PopularFood/>
-       
+        <Searchfilter input={input} setInput={setInput} data={fooditem} />  
+        <Carousel/>
+        <FoodTypes/>
+        <QuickFood/>
+        <FilterSection/>
+        <SecondCarousel/>
+        <SecondQuickFood/>
+        <FilterSection/>
+        <PopularFood/>   
     </ScrollView>
   )
 }
