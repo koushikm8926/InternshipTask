@@ -14,10 +14,14 @@ import MenuItem from '../components/MenuItem';
 import PopularFood from '../components/PopularFood';
 import SecondCarousel from '../components/SecondCarousel';
 import SecondQuickFood from '../components/SecondQuickFood';
+
+import DetailsScreensData from '../data/DetailsScreensData';
+
 const HomeScreen = () => {
   const [input, setInput]= useState("");
   console.log(input);
 
+  // const data= DetailsScreensData;
   const fooditem=[
     {
       id:0,
@@ -95,7 +99,9 @@ const HomeScreen = () => {
       <SecondCarousel/>
       <SecondQuickFood/>
       <FilterSection/>
+
       <PopularFood/>
+       
     </ScrollView>
   )
 }
