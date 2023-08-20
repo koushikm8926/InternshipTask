@@ -10,14 +10,12 @@ import HotelsFoodList from '../data/HotelsFoodList';
 import PopularFood from '../components/PopularFood';
 import SecondCarousel from '../components/SecondCarousel';
 import SecondQuickFood from '../components/SecondQuickFood';
-
-
-
+import MenuItem from '../components/MenuItem';
 const HomeScreen = () => {
+
   const [input, setInput]= useState("");
   console.log(input);
-
-  // const data= DetailsScreensData;
+ 
   const fooditem=[
     {
       id:0,
@@ -71,6 +69,7 @@ const HomeScreen = () => {
   ]
 
   const data= HotelsFoodList;
+
   return (
     <ScrollView style={styles.ScrollView} showsVerticalScrollIndicator={false}>     
       <View style={styles.TopView}>
@@ -86,6 +85,9 @@ const HomeScreen = () => {
         <FoodTypes/>
         <QuickFood/>
         <FilterSection/>
+        {data.map((item, index)=>(
+        <MenuItem key={index} item={item}/>
+      ))}
         <SecondCarousel/>
         <SecondQuickFood/>
         <FilterSection/>

@@ -187,8 +187,18 @@ const DetailsScreen = ({ route }) => {
       <View key={index}>
           <View style={{flexDirection:'row', marginBottom:30,}}>
             <View style={{flexDirection:'column', width:250,}}>
-              <Text style={{fontSize: 16 ,  fontWeight: "bold",}}>{item.name}</Text>
-              <Text>{item.description}</Text>
+
+                <View style={{flexDirection:'row',}}>
+                        <Text style={{fontSize: 16 ,  fontWeight: "bold",}}>{item.name}</Text>
+                            <View style={{marginLeft:10,flexDirection:'row',marginRight:10,}}>
+                              <Text style={{fontSize: 16, fontWeight: "bold",}}>{item.rating}</Text>
+                              <MaterialIcons name="stars" size={24} color="green" />
+                            </View>
+                </View>
+                        <Text>{item.description}</Text>
+                       
+                        <Text>{item.ratings}</Text>
+            
             </View>
             <View>
               <Image source={{uri:item.image}} style={{height:120,width:120,borderRadius:7, }}/>
@@ -208,7 +218,7 @@ const DetailsScreen = ({ route }) => {
                       <Text style={{ fontSize: 15, fontWeight: "800", color: "#018749" }}>
                         Add
                       </Text>
-                    </Pressable>
+              </Pressable>
             </View>
           </View>
       </View>
